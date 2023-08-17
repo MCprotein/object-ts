@@ -1,8 +1,9 @@
 /**
  * 예제코드 Money amount -> money: Money
+ * toString -> addCurrency
  */
 export class Money {
-  constructor(private amount: number) {}
+  constructor(private readonly amount: number) {}
 
   static wons(amount: number): Money {
     return new Money(amount)
@@ -50,7 +51,7 @@ export class Money {
     return Number(randomNumber.slice(0, 3)) + value + Number(randomNumber.slice(4, 6))
   }
 
-  toString(): string {
-    return String(this.amount) + '원'
+  get addCurrency(): string {
+    return `${this.amount} 원`
   }
 }
